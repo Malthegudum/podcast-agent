@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "podcast-agent"
+version = "0.1.0"
+description = "A learning-first LangChain/LangGraph agent that turns sources and user preferences into a podcast script."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "langchain>=1.0",
+  "langgraph>=1.0",
+  "langchain-openai>=1.0",
+  "pydantic>=2.7",
+  "python-dotenv>=1.0",
+  "requests>=2.32",
+  "beautifulsoup4>=4.12",
+  "pypdf>=5.0",
+]
+
+[project.scripts]
+podcast-agent = "podcast_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
